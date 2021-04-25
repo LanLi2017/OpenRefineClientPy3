@@ -21,6 +21,8 @@ OpenRefine Facets, Engine, and Facet Responses.
 import json
 import re
 
+from pyparsing import basestring
+
 
 def to_camel(attr):
     """convert this_attr_name to thisAttrName."""
@@ -208,7 +210,7 @@ class FacetsResponse(object):
                 return self.facets[index]
 
         self.facets = FacetResponseContainer(facets['facets'])
-        self.mode = facets['mode']
+        # self.mode = facets['mode']
 
 
 class Engine(object):
