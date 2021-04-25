@@ -179,7 +179,7 @@ def info(project_id):
 
 def create_project(options):
     """Create a new project from options.create file."""
-    # general defaults are defined in google/refine/refine.py new_project
+    # general defaults are defined in google_refine/refine/refine.py new_project
     # additional defaults for each file type
     defaults = {}
     defaults['xml'] = { 'project_format' : 'text/xml', 'recordPath' : 'record' }
