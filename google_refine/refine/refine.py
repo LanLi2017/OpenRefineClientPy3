@@ -5,7 +5,7 @@ this is the python version 3 for refine-client-py3 library
 from io import StringIO
 from pprint import pprint
 
-from requests.packages.urllib3.packages.six.moves import urllib
+# from requests.packages.urllib3.packages.six.moves import urllib
 
 from .facet import *
 from .history import *
@@ -771,7 +771,9 @@ class RefineProject:
         return response
 
     def remove_column(self, column):
-        pass
+        response = self.do_json('remove-column', {'columnName': column})
+        self.get_models()
+        return response
 
     def blank_down(self, column):
         response = self.do_json('blank-down', {'columnName': column})

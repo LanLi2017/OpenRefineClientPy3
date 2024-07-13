@@ -25,7 +25,7 @@ import sys
 import time
 import json
 
-from google.refine import refine
+from google_refine.refine import refine
 
 reload(sys)
 sys.setdefaultencoding('utf-8')

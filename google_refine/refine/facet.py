@@ -21,7 +21,7 @@ OpenRefine Facets, Engine, and Facet Responses.
 import json
 import re
 
-from pyparsing import basestring
+# from pyparsing import basestring
 
 
 def to_camel(attr):
@@ -162,7 +162,7 @@ class FacetResponse(object):
     def __init__(self, facet):
         self.name = None
         for k, v in facet.items():
-            if isinstance(k, bool) or isinstance(k, basestring):
+            if isinstance(k, bool) or isinstance(k, str):
                 setattr(self, from_camel(k), v)
         self.choices = {}
 
@@ -270,7 +270,7 @@ class Sorting(object):
             criteria = [criteria]
         for criterion in criteria:
             # A string criterion defaults to a string sort on that column
-            if isinstance(criterion, basestring):
+            if isinstance(criterion, str):
                 criterion = {
                     'column': criterion,
                     'valueType': 'string',
